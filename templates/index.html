@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Numbers API</title>
+{% endblock %}
+
+{% block body %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample08"
+        aria-controls="navbarsExample08" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarsExample08">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">
+                    <h1>Numbers API</h1>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<br> <br>
+
+<div class="container">
+
+    <form action="/getData" method="POST">
+
+        <input class="form-control form-control-lg" type="number" name='inputNum' id='inputNum'
+            placeholder="Type a number...">
+        <br>
+
+        <div class="d-flex justify-content-center">
+
+            <ul class="nav nav-pills nav-fill">
+
+                <div class="container">
+                    <div class="row row-cols-4">
+                        <div class="col">
+                            <li class="nav-item">
+                                <input class="nav-link btn-primary" type="submit" name="trivia" value="Trivia">
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <input class="nav-link btn-secondary" type="submit" name="math" value="Math">
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <input class="nav-link btn-primary" type="submit" name="date" value="Date">
+                            </li>
+                        </div>
+                        <div class="col">
+                            <li class="nav-item">
+                                <input class="nav-link btn-secondary" type="submit" name="year" value="Year">
+                            </li>
+                        </div>
+                    </div>
+                </div>
+
+            </ul>
+
+        </div>
+
+
+    </form>
+
+    <br>
+
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container" style="text-align: center;">
+            <p class="lead">{{ num }}</p>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
